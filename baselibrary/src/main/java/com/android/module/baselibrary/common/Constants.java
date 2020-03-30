@@ -6,7 +6,7 @@ package com.android.module.baselibrary.common;
  */
 
 public class Constants {
-    private static BaseConfig mConfig = new BaseConfig();
+    private static BaseConfig mConfig = new DefaultConfig();
 
     public static void setConfig(BaseConfig config) {
         mConfig = config;
@@ -16,32 +16,17 @@ public class Constants {
     }
 
     // 是否debug模式=======》打包上线改为 false
-    public static boolean isDebug() {
-        return mConfig.isDebug;
-    }
-
+    public static final boolean isDebug = mConfig.isDebug();
     // 是否显示日志=======》打包上线改为 false
-    public static boolean isShowLog() {
-        return mConfig.isShowLog;
-    }
-
+    public static final boolean isShowLog = mConfig.isShowLog();
     // 是否保存日志到本地
-    public static boolean isSaveLog() {
-        return mConfig.isSaveLog;
-    }
-
+    public static final boolean isSaveLog = mConfig.isSaveLog();
     // 崩溃后要启动的Activity的全类名
-    public static String restartActivityName() {
-        return mConfig.RESTART_ACTIVITY_NAME;
-    }
-
+    public static final String restartActivityName = mConfig.restartActivityName();
     // 存放加密密钥的Header的Key
-    public static String encryptRequestHeaderKey() {
-        return mConfig.ENCRYPT_REQUEST_HEADER_KEY;
-    }
-
+    public static final String encryptRequestHeaderKey = mConfig.encryptRequestHeaderKey();
     // Activity是否支持矢量图
-    public static final boolean isCompatVectorSupport = mConfig.isCompatVectorSupport;
+    public static final boolean isCompatVectorSupport = true;
     // 网络连接的超时时间（秒）
     public static final int CONNECT_TIMEOUT = 15;
     // 网络数据读取的超时时间（秒）

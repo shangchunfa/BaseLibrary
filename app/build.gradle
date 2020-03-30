@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    def versions = rootProject.ext.versions
+    compileSdkVersion versions.compileVersion
+    buildToolsVersion versions.buildToolVersion
+    defaultConfig {
+        multiDexEnabled = true
+        applicationId versions.applicationId
+        minSdkVersion versions.minSdkVersion
+        targetSdkVersion versions.targetSdkVersion
+        versionCode versions.versionCode
+        versionName versions.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+//        // 阿里巴巴ARouter
+//        javaCompileOptions {
+//            annotationProcessorOptions {
+//                arguments = [moduleName: project.getName()]
+//            }
+//        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def dependencies = rootProject.ext.deps
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation dependencies.junit
+    androidTestImplementation dependencies.test
+    androidTestImplementation(dependencies.testEspresso) {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+//    // v4包
+//    implementation dependencies.supporV4
+    // V7包
+    compile dependencies.appcompat
+}

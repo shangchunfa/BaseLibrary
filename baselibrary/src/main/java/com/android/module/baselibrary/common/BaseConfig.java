@@ -4,7 +4,7 @@ package com.android.module.baselibrary.common;
  * 配置类
  * Created by fa on 2020/3/30.
  */
-abstract class BaseConfig {
+public abstract class BaseConfig {
     /**
      * 是否debug模式
      */

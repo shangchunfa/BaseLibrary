@@ -1,7 +1,7 @@
 ext {
     // app 相关版本控制
     versions = [
-            applicationId   : "com.application.module",
+            applicationId   : "com.android.module",
             minSdkVersion   : 19,
             targetSdkVersion: 28,
             compileVersion  : 28,

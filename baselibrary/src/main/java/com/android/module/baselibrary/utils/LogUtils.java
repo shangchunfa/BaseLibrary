@@ -59,62 +59,62 @@ public class LogUtils {
     }
 
     public static void d(String tag, String msg) {
-        if (Constants.isShowLog()) {
+        if (Constants.isShowLog) {
             cutAndLogMsg(TYPE_D, tag, msg);
         }
     }
 
     public static void d(String tag, boolean msg) {
-        if (Constants.isShowLog()) {
+        if (Constants.isShowLog) {
             cutAndLogMsg(TYPE_D, tag, String.valueOf(msg));
         }
     }
 
     public static void d(String tag, String msg, Throwable t) {
-        if (Constants.isShowLog()) {
+        if (Constants.isShowLog) {
             cutAndLogMsg(TYPE_D, tag, msg, t);
         }
     }
 
     public static void i(String tag, String msg) {
-        if (Constants.isShowLog()) {
+        if (Constants.isShowLog) {
             cutAndLogMsg(TYPE_I, tag, msg);
         }
     }
 
     public static void i(String tag, String msg, Throwable t) {
-        if (Constants.isShowLog()) {
+        if (Constants.isShowLog) {
             cutAndLogMsg(TYPE_I, tag, msg, t);
         }
     }
 
     public static void e(String tag, String msg) {
-        if (Constants.isShowLog()) {
+        if (Constants.isShowLog) {
             cutAndLogMsg(TYPE_E, tag, msg);
         }
     }
 
     public static void e(String tag, boolean msg) {
-        if (Constants.isShowLog()) {
+        if (Constants.isShowLog) {
             cutAndLogMsg(TYPE_E, tag, String.valueOf(msg));
         }
     }
 
     public static void e(String tag, String msg, Throwable t) {
-        if (Constants.isShowLog()) {
+        if (Constants.isShowLog) {
             cutAndLogMsg(TYPE_E, tag, msg, t);
         }
     }
 
     public static void file(String tag, String text) {
-        if (Constants.isSaveLog()) {
+        if (Constants.isSaveLog) {
             File logFile = getLogFile(getLogPath(), DateUtils.formatCurrentDate() + ".log");
             logToFile(logFile, tag, text);
         }
     }
 
     public static void file(Context context, String tag, String text) {
-        if (Constants.isSaveLog()) {
+        if (Constants.isSaveLog) {
             File logFile = getLogFile(getLogPath(context), DateUtils.formatCurrentDate() + ".log");
             logToFile(logFile, tag, text);
         }

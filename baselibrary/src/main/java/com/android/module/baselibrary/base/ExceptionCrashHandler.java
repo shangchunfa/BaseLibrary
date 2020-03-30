@@ -58,8 +58,8 @@ public abstract class ExceptionCrashHandler implements Thread.UncaughtExceptionH
                 e1.printStackTrace();
             }
             // 延时重新开启程序，跳转启动页
-            String restartActivityName = Constants.restartActivityName();
-            if (Constants.isDebug() && !StringUtils.isEmpty(restartActivityName)) {
+            String restartActivityName = Constants.restartActivityName;
+            if (Constants.isDebug && !StringUtils.isEmpty(restartActivityName)) {
                 try {
                     Intent intent = new Intent(mContext, Class.forName(restartActivityName));
                     PendingIntent restartIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
@@ -110,7 +110,7 @@ public abstract class ExceptionCrashHandler implements Thread.UncaughtExceptionH
             LogUtils.crashFile(TAG, exceptionInfo);
         }
         // 异常信息上传到服务器
-        if (!Constants.isDebug()) {
+        if (!Constants.isDebug) {
             logUpload();
         }
         return true;

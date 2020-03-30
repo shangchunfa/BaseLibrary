@@ -9,7 +9,7 @@ import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.ydxf.user.baselibrary.R;
+import com.android.module.baselibrary.R;
 
 
 /**

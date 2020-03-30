@@ -14,10 +14,10 @@ import android.provider.Browser;
 import android.webkit.DownloadListener;
 import android.webkit.WebView;
 
-import com.ydxf.user.baselibrary.utils.BasePreferencesUtils;
-import com.ydxf.user.baselibrary.utils.LogUtils;
-import com.ydxf.user.baselibrary.utils.StringUtils;
-import com.ydxf.user.baselibrary.utils.ToastUtils;
+import com.android.module.baselibrary.utils.BasePreferencesUtils;
+import com.android.module.baselibrary.utils.LogUtils;
+import com.android.module.baselibrary.utils.StringUtils;
+import com.android.module.baselibrary.utils.ToastUtils;
 
 import java.io.File;
 

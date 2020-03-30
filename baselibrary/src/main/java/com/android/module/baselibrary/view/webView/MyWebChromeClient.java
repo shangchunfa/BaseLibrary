@@ -8,7 +8,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 
-import com.ydxf.user.baselibrary.utils.LogUtils;
+import com.android.module.baselibrary.utils.LogUtils;
 
 
 class MyWebChromeClient extends WebChromeClient {

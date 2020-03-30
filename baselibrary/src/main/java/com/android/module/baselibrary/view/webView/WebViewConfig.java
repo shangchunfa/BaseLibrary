@@ -2,7 +2,7 @@ package com.android.module.baselibrary.view.webView;
 
 import android.content.Context;
 
-import com.ydxf.user.baselibrary.utils.AppUtils;
+import com.android.module.baselibrary.utils.AppUtils;
 
 
 /**

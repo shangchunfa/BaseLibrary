@@ -6,8 +6,8 @@ import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
 import android.widget.EditText;
 
-import com.ydxf.user.baselibrary.R;
-import com.ydxf.user.baselibrary.dialog.AlertDialog;
+import com.android.module.baselibrary.R;
+import com.android.module.baselibrary.dialog.AlertDialog;
 
 
 /**

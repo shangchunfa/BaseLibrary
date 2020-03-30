@@ -3,7 +3,7 @@ package com.android.module.baselibrary.common;
 /**
  * Created by fa on 2020/3/30.
  */
-class DefaultConfig extends BaseConfig {
+public class DefaultConfig extends BaseConfig {
     @Override
     boolean isDebug() {
         return true;

@@ -5,27 +5,27 @@ package com.android.module.baselibrary.common;
  */
 public class DefaultConfig extends BaseConfig {
     @Override
-    boolean isDebug() {
+    public boolean isDebug() {
         return true;
     }
 
     @Override
-    boolean isShowLog() {
+    public boolean isShowLog() {
         return true;
     }
 
     @Override
-    boolean isSaveLog() {
+    public boolean isSaveLog() {
         return false;
     }
 
     @Override
-    String restartActivityName() {
+    public String restartActivityName() {
         return "";
     }
 
     @Override
-    String encryptRequestHeaderKey() {
+    public String encryptRequestHeaderKey() {
         return "encrypt-key";
     }
 }

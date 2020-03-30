@@ -50,7 +50,7 @@ public abstract class EncryptInterceptor implements Interceptor {
 //                    .header("Content-Type", body.contentType().toString())
                     .header("Content-Type", "text/plain; charset=utf-8")
                     .header("Content-Length", String.valueOf(body.contentLength()))
-                    .header(Constants.ENCRYPT_REQUEST_HEADER_KEY, "adbs")
+                    .header(Constants.encryptRequestHeaderKey(), "adbs")
                     .method(request.method(), body)
                     .build();
         }

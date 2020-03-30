@@ -167,7 +167,7 @@ public class OkHttpEngine implements IHttpEngine {
                         result = response.body().string();
                     }
                     // KLog打印相应数据
-                    if (Constants.isShowLog) {
+                    if (Constants.isShowLog()) {
                         KLog.json(TAG, result);
                     }
                     // 回调
@@ -256,7 +256,7 @@ public class OkHttpEngine implements IHttpEngine {
                             if (responseBody != null) {
                                 try {
                                     final String result = responseBody.string();
-                                    if (Constants.isShowLog) {
+                                    if (Constants.isShowLog()) {
                                         KLog.json(TAG, result);
                                     }
                                     // 转成String回调
@@ -337,7 +337,7 @@ public class OkHttpEngine implements IHttpEngine {
                             ResponseBody responseBody = response.body();
                             if (responseBody != null) {
                                 byte[] result = responseBody.bytes();
-                                if (Constants.isShowLog) {
+                                if (Constants.isShowLog()) {
                                     KLog.json(TAG, new String(result));
                                 }
                                 // 转成String回调
@@ -389,7 +389,7 @@ public class OkHttpEngine implements IHttpEngine {
                         }
                         if (response.isSuccessful()) {
                             final String result = response.body().string();
-                            if (Constants.isShowLog) {
+                            if (Constants.isShowLog()) {
                                 KLog.json(TAG, result);
                             }
                             callBack.onSuccess(context, result);
@@ -539,7 +539,7 @@ public class OkHttpEngine implements IHttpEngine {
                 } else {
                     result = response.body().string();
                 }
-                if (Constants.isShowLog) {
+                if (Constants.isShowLog()) {
                     KLog.json(TAG, result);
                 }
                 return result;
@@ -572,7 +572,7 @@ public class OkHttpEngine implements IHttpEngine {
             }
             if (response.isSuccessful()) {
                 final String result = response.body().string();
-                if (Constants.isShowLog) {
+                if (Constants.isShowLog()) {
                     KLog.json(TAG, result);
                 }
                 return result;

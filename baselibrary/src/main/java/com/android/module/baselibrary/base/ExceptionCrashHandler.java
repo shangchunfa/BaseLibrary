@@ -15,6 +15,7 @@ import com.android.module.baselibrary.utils.ActivityUtils;
 import com.android.module.baselibrary.utils.DisplayUtil;
 import com.android.module.baselibrary.utils.LogUtils;
 import com.android.module.baselibrary.utils.NetWorkHelper;
+import com.android.module.baselibrary.utils.StringUtils;
 import com.android.module.baselibrary.utils.ToastUtils;
 
 import java.io.PrintWriter;
@@ -57,9 +58,10 @@ public abstract class ExceptionCrashHandler implements Thread.UncaughtExceptionH
                 e1.printStackTrace();
             }
             // 延时重新开启程序，跳转启动页
-            if (Constants.isDebug) {
+            String restartActivityName = Constants.restartActivityName();
+            if (Constants.isDebug() && !StringUtils.isEmpty(restartActivityName)) {
                 try {
-                    Intent intent = new Intent(mContext, Class.forName(Constants.RESTART_ACTIVITY_NAME));
+                    Intent intent = new Intent(mContext, Class.forName(restartActivityName));
                     PendingIntent restartIntent = PendingIntent.getActivity(mContext, 0, intent, 0);
 //                PendingIntent restartIntent = PendingIntent.getActivity(mContext, 0, intent, Intent.FLAG_ACTIVITY_NEW_TASK);
                     //启动延时任务，延时1秒启动开屏页
@@ -108,7 +110,7 @@ public abstract class ExceptionCrashHandler implements Thread.UncaughtExceptionH
             LogUtils.crashFile(TAG, exceptionInfo);
         }
         // 异常信息上传到服务器
-        if (!Constants.isDebug) {
+        if (!Constants.isDebug()) {
             logUpload();
         }
         return true;

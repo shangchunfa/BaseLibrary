@@ -25,10 +25,10 @@ public class LogUtils {
     private static final boolean isExpandMsg = true;
 
     // log标记
-    private static final String mark = "<NewHouseChain>  ";
+    private static String MARK = "<Project>  ";
 
     // 日志文件存储路径
-    private static String LOG_PATH = "NewHouseChain";// 日志文件在sdcard中的路径
+    private static String LOG_PATH = "Project";// 日志文件在sdcard中的路径
     //
 
 
@@ -40,11 +40,21 @@ public class LogUtils {
     // ERROR
     private static final int TYPE_E = 3;
 
+    /**
+     * 设置过滤标签和存储文件夹名
+     */
+    public static void setLogMark(String mark) {
+        if (StringUtils.isEmpty(mark)) {
+            return;
+        }
+        MARK = "<" + mark + ">";
+        LOG_PATH = mark;
+    }
 
     // 获取添加标志之后的日志信息
     private static String getMsg(String msg) {
         if (isExpandMsg)
-            msg = mark + msg;
+            msg = MARK + msg;
         return msg;
     }
 

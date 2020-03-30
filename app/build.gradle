@@ -37,8 +37,6 @@ dependencies {
     androidTestImplementation(dependencies.testEspresso) {
         exclude group: 'com.android.support', module: 'support-annotations'
     }
-//    // v4包
-//    implementation dependencies.supporV4
     // V7包
     compile dependencies.appcompat
 }

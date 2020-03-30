@@ -1,1 +1,1 @@
-include ':app', ':baselibrary', ':libjpeg'
+include ':app', ':baselibrary'
